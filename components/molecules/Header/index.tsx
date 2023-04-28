@@ -4,7 +4,7 @@ import { NextPage } from 'next'
 type HeaderProps = {
 	title: string
 }
-export const Header: NextPage<HeaderProps> = (props) => {
+const Header: NextPage<HeaderProps> = (props) => {
 	const { title } = props
 
 	return (
