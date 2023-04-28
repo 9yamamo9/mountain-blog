@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { FaTwitter } from 'react-icons/all'
 
 const meta: Meta<typeof HeaderItem> = {
-	title: 'HeaderItem',
+	title: 'atoms/HeaderItem',
 	component: HeaderItem,
 }
 

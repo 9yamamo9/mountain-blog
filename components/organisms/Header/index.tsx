@@ -1,5 +1,7 @@
-import { AppBar, Box, Container, Toolbar, Typography } from '@mui/material'
+import { Box, Toolbar } from '@mui/material'
 import { NextPage } from 'next'
+import HeaderTitle from '../../molecules/HeaderTitle'
+import HeaderItems from '../../molecules/HeaderItems'
 
 type HeaderProps = {
 	title: string
@@ -10,7 +12,8 @@ const Header: NextPage<HeaderProps> = (props) => {
 	return (
 		<Box>
 			<Toolbar>
-				<Typography variant='h4'>{title}</Typography>
+				<HeaderTitle title={title} />
+				<HeaderItems />
 			</Toolbar>
 		</Box>
 	)

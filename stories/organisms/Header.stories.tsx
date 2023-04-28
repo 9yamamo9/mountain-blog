@@ -1,8 +1,8 @@
-import Header from '../../components/molecules/Header'
+import Header from '../../components/organisms/Header'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Header> = {
-	title: 'Header',
+	title: 'organisms/Header',
 	component: Header,
 }
 
