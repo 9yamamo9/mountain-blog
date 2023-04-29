@@ -11,5 +11,10 @@ export default meta
 type Story = StoryObj<typeof Profile>
 
 export const Primary: Story = {
-	render: () => <Profile />,
+	args: {
+		src: 'Profile/yamamori-rice.jpg',
+		alt: 'Mountain Forest',
+		name: 'Mountain Forest',
+		message: 'Sample Message',
+	},
 }

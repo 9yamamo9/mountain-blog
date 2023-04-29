@@ -11,7 +11,8 @@ export default meta
 type Story = StoryObj<typeof ProfileAvatar>
 
 export const Primary: Story = {
-	render: () => (
-		<ProfileAvatar alt='Mountain Forest' src='/Profile/yamamori-rice.jpg' />
-	),
+	args: {
+		alt: 'Mountain Forest',
+		src: '/Profile/yamamori-rice.jpg',
+	},
 }

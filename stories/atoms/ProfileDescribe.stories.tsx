@@ -11,10 +11,8 @@ export default meta
 type Story = StoryObj<typeof ProfileDescribe>
 
 export const Primary: Story = {
-	render: () => (
-		<ProfileDescribe
-			name='Sample Name'
-			message='Sample message is too long. I will check the design.'
-		/>
-	),
+	args: {
+		name: 'Sample Name',
+		message: 'Sample message is too long. I will check the design.',
+	},
 }

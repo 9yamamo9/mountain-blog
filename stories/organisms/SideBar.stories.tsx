@@ -11,12 +11,10 @@ export default meta
 type Story = StoryObj<typeof SideBar>
 
 export const Primary: Story = {
-	render: () => (
-		<SideBar
-			src='/Profile/yamamori-rice.jpg'
-			alt='Mountain Forest'
-			name='Mountain Forest'
-			message='Welcome to the blogs.'
-		/>
-	),
+	args: {
+		src: '/Profile/yamamori-rice.jpg',
+		alt: 'Mountain Forest',
+		name: 'Mountain Forest',
+		message: 'Welcome to the blogs.',
+	},
 }

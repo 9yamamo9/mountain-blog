@@ -11,5 +11,7 @@ export default meta
 type Story = StoryObj<typeof Header>
 
 export const Primary: Story = {
-	render: () => <Header title='Sample Title' />,
+	args: {
+		title: 'Sample Title',
+	},
 }
