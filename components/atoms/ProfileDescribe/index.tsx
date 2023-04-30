@@ -1,10 +1,8 @@
 import { Box, Typography } from '@mui/material'
 import { NextPage } from 'next'
+import { ProfileProps } from '../../molecules/Profile'
 
-type ProfileDescribeProps = {
-	name: string
-	message?: string
-}
+type ProfileDescribeProps = Pick<ProfileProps, 'name' | 'message'>
 
 const ProfileDescribe: NextPage<ProfileDescribeProps> = (props) => {
 	const { name, message } = props

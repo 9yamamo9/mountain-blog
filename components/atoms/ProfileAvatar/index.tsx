@@ -1,11 +1,10 @@
 import { Avatar } from '@mui/material'
 import { NextPage } from 'next'
 import Image from 'next/image'
+import { ProfileProps } from '../../molecules/Profile'
 
-type ProfileAvatarProps = {
-	alt: string
-	src: string
-}
+type ProfileAvatarProps = Pick<ProfileProps, 'alt' | 'src'>
+
 const ProfileAvatar: NextPage<ProfileAvatarProps> = (props) => {
 	const { alt, src } = props
 

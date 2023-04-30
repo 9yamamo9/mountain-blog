@@ -1,9 +1,7 @@
 import { Box, Typography } from '@mui/material'
 import { NextPage } from 'next'
+import { HeaderProps } from '../../organisms/Header'
 
-type HeaderProps = {
-	title: string
-}
 const HeaderTitle: NextPage<HeaderProps> = (props) => {
 	const { title } = props
 

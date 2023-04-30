@@ -1,15 +1,10 @@
 import { Box } from '@mui/material'
-import Header from '../../organisms/Header'
+import Header, { HeaderProps } from '../../organisms/Header'
 import { NextPage } from 'next'
 import SideBar from '../../organisms/SideBar'
+import { ProfileProps } from '../../molecules/Profile'
 
-type TopPageProps = {
-	title: string
-	src: string
-	alt: string
-	name: string
-	message: string
-}
+type TopPageProps = HeaderProps & ProfileProps
 
 const TopPage: NextPage<TopPageProps> = (props) => {
 	const { title, src, alt, name, message } = props

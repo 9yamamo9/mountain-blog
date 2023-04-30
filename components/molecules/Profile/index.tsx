@@ -3,7 +3,7 @@ import ProfileAvatar from '../../atoms/ProfileAvatar'
 import ProfileDescribe from '../../atoms/ProfileDescribe'
 import { NextPage } from 'next'
 
-type ProfileProps = {
+export type ProfileProps = {
 	src: string
 	alt: string
 	name: string
