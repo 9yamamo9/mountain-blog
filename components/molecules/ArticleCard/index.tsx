@@ -9,7 +9,7 @@ import Image from 'next/image'
 import { NextPage } from 'next'
 import { FcLikePlaceholder } from 'react-icons/all'
 
-type ArticleCardProps = {
+export type ArticleCardProps = {
 	imageSrc?: string
 	imageAlt?: string
 	title: string
