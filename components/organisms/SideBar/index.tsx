@@ -20,6 +20,7 @@ const SideBar: NextPage<SideBarProps> = (props) => {
 				flexShrink: 0,
 				[`& .MuiDrawer-paper`]: { width: 240, boxSizing: 'border-box' },
 			}}>
+			<Toolbar />
 			<Box sx={{ overflow: 'auto' }}>
 				<List>
 					<ListItem>

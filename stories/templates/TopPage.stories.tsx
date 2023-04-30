@@ -1,11 +1,11 @@
-import Header from '../../components/organisms/Header'
+import TopPage from '../../components/templates/TopPage'
 import { Meta, StoryObj } from '@storybook/react'
 import { ThemeProvider } from '@mui/material'
 import { theme } from '../../theme/theme'
 
-const meta: Meta<typeof Header> = {
-	title: 'organisms/Header',
-	component: Header,
+const meta: Meta<typeof TopPage> = {
+	title: 'templates/TopPage',
+	component: TopPage,
 	decorators: [
 		(Story) => {
 			return (
@@ -19,10 +19,14 @@ const meta: Meta<typeof Header> = {
 
 export default meta
 
-type Story = StoryObj<typeof Header>
+type Story = StoryObj<typeof TopPage>
 
 export const Primary: Story = {
 	args: {
 		title: 'Sample Title',
+		src: '/Profile/yamamori-rice.jpg',
+		alt: 'Mountain Forest',
+		name: 'Mountain Forest',
+		message: 'Sample Message',
 	},
 }
