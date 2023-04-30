@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 import ArticleCard, { ArticleCardProps } from '../../molecules/ArticleCard'
 import Grid2 from '@mui/material/Unstable_Grid2'
 
-type ArticleCardsProps = {
+export type ArticleCardsProps = {
 	cards: ArticleCardProps[]
 }
 const ArticleCards: NextPage<ArticleCardsProps> = (props) => {
