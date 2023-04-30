@@ -1,6 +1,5 @@
 import { Box, Typography } from '@mui/material'
 import { NextPage } from 'next'
-import { Component } from 'react'
 
 type HeaderItem = {
 	iconComponent: JSX.Element
