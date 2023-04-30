@@ -14,8 +14,12 @@ const Profile: NextPage<ProfileProps> = (props) => {
 	const { src, alt, name, message } = props
 
 	return (
-		<Box display='flex' flexDirection='column'>
-			<Box display='flex' flexDirection='column' alignItems='center'>
+		<Box>
+			<Box
+				display='flex'
+				flexDirection='column'
+				alignItems='center'
+				justifyContent='center'>
 				<ProfileAvatar src={src} alt={alt} />
 			</Box>
 			<ProfileDescribe name={name} message={message} />

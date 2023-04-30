@@ -9,8 +9,8 @@ const ProfileAvatar: NextPage<ProfileAvatarProps> = (props) => {
 	const { alt, src } = props
 
 	return (
-		<Avatar sx={{ width: 80, height: 80 }}>
-			<Image src={src} alt={alt} width={160} height={80} />
+		<Avatar sx={{ width: 120, height: 120 }}>
+			<Image src={src} alt={alt} width={240} height={120} />
 		</Avatar>
 	)
 }
