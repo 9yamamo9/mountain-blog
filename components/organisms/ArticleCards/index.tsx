@@ -17,7 +17,7 @@ const ArticleCards: NextPage<ArticleCardsProps> = (props) => {
 			spacing={3}>
 			{cards.map((card) => {
 				return (
-					<Grid2 key={card.title}>
+					<Grid2 key={card.title} xs={12} md={4}>
 						<ArticleCard
 							imageSrc={card.imageSrc}
 							imageAlt={card.imageAlt}

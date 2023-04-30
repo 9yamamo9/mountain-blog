@@ -23,7 +23,7 @@ type Story = StoryObj<typeof TopPage>
 
 export const Primary: Story = {
 	args: {
-		title: 'Spample Title',
+		title: 'Sample Title',
 		src: '/Profile/yamamori-rice.jpg',
 		alt: 'Mountain Forest',
 		name: 'Mountain Forest',
@@ -34,6 +34,14 @@ export const Primary: Story = {
 				imageAlt: 'Mountain Forest',
 				title: 'Mountain Forest',
 				describeMessage: 'Sample describe message',
+			},
+			{
+				title: 'No Image',
+				describeMessage: 'No image describe message',
+			},
+			{
+				title: 'Third Content',
+				describeMessage: 'Third describe message',
 			},
 		],
 	},
