@@ -14,7 +14,7 @@ const Profile: NextPage<ProfileProps> = (props) => {
 	const { src, alt, name, message } = props
 
 	return (
-		<Box>
+		<Box mt={2}>
 			<Box
 				display='flex'
 				flexDirection='column'
@@ -22,7 +22,9 @@ const Profile: NextPage<ProfileProps> = (props) => {
 				justifyContent='center'>
 				<ProfileAvatar src={src} alt={alt} />
 			</Box>
-			<ProfileDescribe name={name} message={message} />
+			<Box ml={2}>
+				<ProfileDescribe name={name} message={message} />
+			</Box>
 		</Box>
 	)
 }

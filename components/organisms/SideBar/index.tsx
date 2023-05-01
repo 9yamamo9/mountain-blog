@@ -22,11 +22,7 @@ const SideBar: NextPage<SideBarProps> = (props) => {
 			}}>
 			<Toolbar />
 			<Box sx={{ overflow: 'auto' }}>
-				<List>
-					<ListItem>
-						<Profile src={src} alt={alt} name={name} message={message} />
-					</ListItem>
-				</List>
+				<Profile src={src} alt={alt} name={name} message={message} />
 			</Box>
 		</Drawer>
 	)
