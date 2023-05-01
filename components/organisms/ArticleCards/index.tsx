@@ -23,6 +23,8 @@ const ArticleCards: NextPage<ArticleCardsProps> = (props) => {
 							imageAlt={card.imageAlt}
 							title={card.title}
 							describeMessage={card.describeMessage}
+							tags={card.tags}
+							date={card.date}
 						/>
 					</Grid2>
 				)
