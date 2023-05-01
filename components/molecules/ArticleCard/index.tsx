@@ -61,9 +61,9 @@ const ArticleCard: NextPage<ArticleCardProps> = (props) => {
 					})}
 				</Grid2>
 			</CardContent>
-			<CardActions disableSpacing>
-				<FcLikePlaceholder size={24} />
-			</CardActions>
+			{/*<CardActions disableSpacing>*/}
+			{/*	<FcLikePlaceholder size={24} />*/}
+			{/*</CardActions>*/}
 		</Card>
 	)
 }
