@@ -7,10 +7,12 @@ const withMDX = require('@next/mdx')({
 	},
 })
 
+const withTM = require('next-transpile-modules')(['react-icons'])
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 	reactStrictMode: true,
 }
 
-module.exports = withMDX(nextConfig)
+module.exports = withTM(withMDX(nextConfig))

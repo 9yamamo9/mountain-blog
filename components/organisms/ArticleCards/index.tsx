@@ -25,6 +25,7 @@ const ArticleCards: NextPage<ArticleCardsProps> = (props) => {
 							describeMessage={card.describeMessage}
 							tags={card.tags}
 							date={card.date}
+							url={card.url}
 						/>
 					</Grid2>
 				)

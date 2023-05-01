@@ -1,16 +1,8 @@
-import {
-	Box,
-	Card,
-	CardActions,
-	CardContent,
-	CardMedia,
-	Chip,
-	Typography,
-} from '@mui/material'
+import { Card, CardContent, CardMedia, Chip, Typography } from '@mui/material'
 import Image from 'next/image'
 import { NextPage } from 'next'
-import { FcLikePlaceholder } from 'react-icons/all'
 import Grid2 from '@mui/material/Unstable_Grid2'
+import { useRouter } from 'next/router'
 
 export type ArticleCardProps = {
 	imageSrc?: string
@@ -19,13 +11,20 @@ export type ArticleCardProps = {
 	describeMessage: string
 	tags?: string[]
 	date: string
+	url: string
 }
 
 const ArticleCard: NextPage<ArticleCardProps> = (props) => {
-	const { imageSrc, imageAlt, title, describeMessage, tags, date } = props
+	const { imageSrc, imageAlt, title, describeMessage, tags, date, url } = props
+	const articleUrl = `/blogs/${url}`
+	const router = useRouter()
+
+	const transit = async () => {
+		await router.push(articleUrl)
+	}
 
 	return (
-		<Card sx={{ maxWidth: 345 }}>
+		<Card sx={{ maxWidth: 345 }} onClick={transit}>
 			{imageSrc && imageAlt && (
 				<CardMedia sx={{ height: 160 }}>
 					<Image
