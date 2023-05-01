@@ -1,4 +1,4 @@
-import { Box, Container, Toolbar } from '@mui/material'
+import { Box, Container, Toolbar, Typography } from '@mui/material'
 import Header, { HeaderProps } from '../../organisms/Header'
 import { NextPage } from 'next'
 import SideBar from '../../organisms/SideBar'
@@ -15,6 +15,7 @@ const TopPage: NextPage<TopPageProps> = (props) => {
 			<Header title={title} />
 			<SideBar src={src} alt={alt} name={name} message={message} />
 			<Container sx={{ mt: 12 }}>
+				<Typography variant='h4'>New Articles</Typography>
 				<ArticleCards cards={cards} />
 			</Container>
 		</Box>
