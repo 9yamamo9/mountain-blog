@@ -12,11 +12,13 @@ const HeaderItem: NextPage<HeaderItem> = (props) => {
 	return (
 		<Box
 			display='flex'
-			flexDirection='column'
+			flexDirection='row'
 			justifyContent='center'
 			alignItems='center'>
 			{iconComponent}
-			<Typography variant='caption'>{name}</Typography>
+			<Typography variant='h6' pl={1}>
+				{name}
+			</Typography>
 		</Box>
 	)
 }

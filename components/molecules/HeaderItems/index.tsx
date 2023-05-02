@@ -1,12 +1,20 @@
 import HeaderItem from '../../atoms/HeaderItem'
-import { AiFillGithub, FaLinkedin, FaTwitter, ImProfile } from 'react-icons/all'
+import {
+	AiFillGithub,
+	FaLinkedin,
+	FaTwitter,
+	RiProfileLine,
+} from 'react-icons/all'
 import Grid2 from '@mui/material/Unstable_Grid2'
 
 const HeaderItems = () => {
 	return (
-		<Grid2 container direction='row' spacing={2}>
+		<Grid2 container direction='row' spacing={4}>
 			<Grid2>
-				<HeaderItem iconComponent={<ImProfile size={36} />} name='Profile' />
+				<HeaderItem
+					iconComponent={<RiProfileLine size={36} />}
+					name='Profile'
+				/>
 			</Grid2>
 
 			<Grid2>
