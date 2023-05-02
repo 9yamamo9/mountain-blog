@@ -1,7 +1,6 @@
 import { AppBar, Toolbar } from '@mui/material'
 import { NextPage } from 'next'
 import HeaderTitle from '../../molecules/HeaderTitle'
-import HeaderItems from '../../molecules/HeaderItems'
 
 export type HeaderProps = {
 	title: string
@@ -18,7 +17,6 @@ const Header: NextPage<HeaderProps> = (props) => {
 			}}>
 			<Toolbar>
 				<HeaderTitle title={title} />
-				<HeaderItems />
 			</Toolbar>
 		</AppBar>
 	)
