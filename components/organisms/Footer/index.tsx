@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material'
-import HeaderItems from '../../molecules/HeaderItems'
+import FooterItems from '../../molecules/FooterItems'
 
 const Footer = () => {
 	return (
@@ -10,7 +10,7 @@ const Footer = () => {
 			alignItems='center'
 			bgcolor='lightgrey'
 			p={1}>
-			<HeaderItems />
+			<FooterItems />
 			<Typography variant='body2' mt={1}>
 				{"© 2023 Mountain Forest's blog"}
 			</Typography>

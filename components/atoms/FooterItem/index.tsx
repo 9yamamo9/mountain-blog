@@ -6,7 +6,7 @@ type HeaderItem = {
 	name: string
 }
 
-const HeaderItem: NextPage<HeaderItem> = (props) => {
+const FooterItem: NextPage<HeaderItem> = (props) => {
 	const { iconComponent, name } = props
 
 	return (
@@ -23,4 +23,4 @@ const HeaderItem: NextPage<HeaderItem> = (props) => {
 	)
 }
 
-export default HeaderItem
+export default FooterItem
