@@ -16,7 +16,7 @@ const FooterItem: NextPage<HeaderItem> = (props) => {
 			justifyContent='center'
 			alignItems='center'>
 			{iconComponent}
-			<Typography variant='h6' pl={1}>
+			<Typography variant='body1' pl={1}>
 				{name}
 			</Typography>
 		</Box>

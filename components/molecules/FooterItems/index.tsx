@@ -12,21 +12,21 @@ const FooterItems = () => {
 		<Grid2 container direction='row' spacing={4}>
 			<Grid2>
 				<FooterItem
-					iconComponent={<RiProfileLine size={36} />}
+					iconComponent={<RiProfileLine size={24} />}
 					name='Profile'
 				/>
 			</Grid2>
 
 			<Grid2>
-				<FooterItem iconComponent={<AiFillGithub size={36} />} name='GitHub' />
+				<FooterItem iconComponent={<AiFillGithub size={24} />} name='GitHub' />
 			</Grid2>
 
 			<Grid2>
-				<FooterItem iconComponent={<FaTwitter size={36} />} name='Twitter' />
+				<FooterItem iconComponent={<FaTwitter size={24} />} name='Twitter' />
 			</Grid2>
 
 			<Grid2>
-				<FooterItem iconComponent={<FaLinkedin size={36} />} name='LinkedIn' />
+				<FooterItem iconComponent={<FaLinkedin size={24} />} name='LinkedIn' />
 			</Grid2>
 		</Grid2>
 	)
