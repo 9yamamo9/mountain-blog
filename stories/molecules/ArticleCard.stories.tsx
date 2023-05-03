@@ -26,6 +26,6 @@ export const Primary: Story = {
 		imageSrc: '/Profile/yamamori-rice.jpg',
 		imageAlt: 'Mountain Forest',
 		title: 'Mountain Forest',
-		describeMessage: 'Sample describe message',
+		describe: 'Sample describe message',
 	},
 }

@@ -8,15 +8,15 @@ export type ArticleCardProps = {
 	imageSrc?: string
 	imageAlt?: string
 	title: string
-	describeMessage: string
+	describe: string
 	tags?: string[]
 	date: string
-	url: string
+	linkUrl: string
 }
 
 const ArticleCard: NextPage<ArticleCardProps> = (props) => {
-	const { imageSrc, imageAlt, title, describeMessage, tags, date, url } = props
-	const articleUrl = `/blogs/${url}`
+	const { imageSrc, imageAlt, title, describe, tags, date, linkUrl } = props
+	const articleUrl = `/blogs/${linkUrl}`
 	const router = useRouter()
 
 	const transit = async () => {
@@ -41,7 +41,7 @@ const ArticleCard: NextPage<ArticleCardProps> = (props) => {
 					{title}
 				</Typography>
 				<Typography variant='body2' color='text.secondary'>
-					{describeMessage}
+					{describe}
 				</Typography>
 				<Typography
 					variant='body2'

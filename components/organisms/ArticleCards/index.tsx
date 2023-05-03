@@ -22,10 +22,10 @@ const ArticleCards: NextPage<ArticleCardsProps> = (props) => {
 							imageSrc={card.imageSrc}
 							imageAlt={card.imageAlt}
 							title={card.title}
-							describeMessage={card.describeMessage}
+							describe={card.describe}
 							tags={card.tags}
 							date={card.date}
-							url={card.url}
+							linkUrl={card.linkUrl}
 						/>
 					</Grid2>
 				)
