@@ -18,15 +18,27 @@ const FooterItems = () => {
 			</Grid2>
 
 			<Grid2>
-				<FooterItem iconComponent={<AiFillGithub size={24} />} name='GitHub' />
+				<FooterItem
+					iconComponent={<AiFillGithub size={24} />}
+					name='GitHub'
+					url='https://github.com/9yamamo9'
+				/>
 			</Grid2>
 
 			<Grid2>
-				<FooterItem iconComponent={<FaTwitter size={24} />} name='Twitter' />
+				<FooterItem
+					iconComponent={<FaTwitter size={24} />}
+					name='Twitter'
+					url='https://twitter.com/9yamamo9'
+				/>
 			</Grid2>
 
 			<Grid2>
-				<FooterItem iconComponent={<FaLinkedin size={24} />} name='LinkedIn' />
+				<FooterItem
+					iconComponent={<FaLinkedin size={24} />}
+					name='LinkedIn'
+					url='https://www.linkedin.com/in/yuta-yamamori-786883175/'
+				/>
 			</Grid2>
 		</Grid2>
 	)
