@@ -23,11 +23,6 @@ type Story = StoryObj<typeof TopPage>
 
 export const Primary: Story = {
 	args: {
-		title: 'Sample Title',
-		src: '/Profile/yamamori-rice.jpg',
-		alt: 'Mountain Forest',
-		name: 'Mountain Forest',
-		message: 'Sample Message',
 		cards: [
 			{
 				imageSrc: '/Profile/yamamori-rice.jpg',
