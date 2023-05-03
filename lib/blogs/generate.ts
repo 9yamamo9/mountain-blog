@@ -2,7 +2,7 @@ import path from 'path'
 import { readdirSync, readFileSync } from 'fs'
 import matter from 'gray-matter'
 
-const blogsDir = path.join(process.cwd(), 'pages/blogs')
+const blogsDir = path.join(process.cwd(), '_blogs')
 
 export const getArticleFileNames = () => {
 	return readdirSync(blogsDir, { withFileTypes: true })

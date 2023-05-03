@@ -13,14 +13,7 @@ const Home = (props: any) => {
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 				<link rel='icon' href='/mountain-forest-logo.png' />
 			</Head>
-			<TopPage
-				title="Mountain Forest's blog"
-				src='/Profile/yamamori-rice.jpg'
-				alt='MF'
-				name='Muntain Forest'
-				message="I'm a software engineer."
-				cards={blogMeta}
-			/>
+			<TopPage cards={blogMeta} />
 		</>
 	)
 }
@@ -30,7 +23,6 @@ export default Home
 export const getStaticProps: GetStaticProps = (context) => {
 	const articleFileNames = getArticleFileNames()
 
-	// TODO: Get article's meta
 	const meta = articleFileNames.map((filename) => {
 		return getMetaArticle(filename)
 	})
