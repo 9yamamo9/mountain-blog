@@ -20,7 +20,7 @@ const Home = (props: any) => {
 
 export default Home
 
-export const getStaticProps: GetStaticProps = (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
 	const articleFileNames = getArticleFileNames()
 
 	const meta = articleFileNames.map((filename) => {
