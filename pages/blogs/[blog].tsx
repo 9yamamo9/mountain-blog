@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { Typography } from '@mui/material'
 import { getMetaArticles } from '@/lib/blogs/generate'
 
+// TODO: Create Props Type
 const Blog = (props: any) => {
 	const { blogs } = props
 

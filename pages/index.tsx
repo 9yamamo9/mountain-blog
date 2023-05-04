@@ -3,6 +3,7 @@ import TopPage from '@/components/templates/TopPage'
 import { GetStaticProps } from 'next'
 import { getMetaArticles } from '@/lib/blogs/generate'
 
+// TODO: Create Props Type
 const Home = (props: any) => {
 	const { blogMeta } = props
 	return (
