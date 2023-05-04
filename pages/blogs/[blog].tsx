@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { Typography } from '@mui/material'
-import { getArticleFileNames } from '@/lib/blogs/generate'
+import { getMetaArticles } from '@/lib/blogs/generate'
 
 const Blog = (props: any) => {
 	const { blogs } = props
@@ -15,8 +15,8 @@ const Blog = (props: any) => {
 export default Blog
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const articleSlugs = getArticleFileNames().map((articleFileName) => {
-		return { params: { blog: articleFileName.split(/\.mdx/)[0] } }
+	const articleSlugs = getMetaArticles().map((meta) => {
+		return { params: { blog: meta.slug } }
 	})
 
 	return {
@@ -28,8 +28,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
 	return {
 		props: {
-			blogs: getArticleFileNames().map((articleFileName) => {
-				return { blog: articleFileName.split(/\.mdx/)[0] }
+			blogs: getMetaArticles().map((meta) => {
+				return { blog: meta.slug }
 			}),
 		},
 	}

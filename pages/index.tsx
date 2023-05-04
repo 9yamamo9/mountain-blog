@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import TopPage from '@/components/templates/TopPage'
 import { GetStaticProps } from 'next'
-import { getArticleFileNames, getMetaArticle } from '@/lib/blogs/generate'
+import { getMetaArticles } from '@/lib/blogs/generate'
 
 const Home = (props: any) => {
 	const { blogMeta } = props
@@ -21,16 +21,12 @@ const Home = (props: any) => {
 export default Home
 
 export const getStaticProps: GetStaticProps = async (context) => {
-	const articleFileNames = getArticleFileNames()
+	const metas = getMetaArticles()
 
-	const meta = articleFileNames.map((filename) => {
-		return getMetaArticle(filename)
-	})
-
-	console.log('tmpData', meta)
+	console.log('tmpData', metas)
 	return {
 		props: {
-			blogMeta: meta,
+			blogMeta: metas,
 		},
 	}
 }
