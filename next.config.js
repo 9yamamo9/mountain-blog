@@ -1,6 +1,3 @@
-const { createMdxImport } = require('./lib/blogs/main')
-createMdxImport()
-
 const withMDX = require('@next/mdx')({
 	extension: /\.mdx?$/,
 	options: {

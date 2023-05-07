@@ -1,14 +1,15 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { Typography } from '@mui/material'
 import { getMetaArticles } from '@/lib/blogs/generate'
+import dynamic from 'next/dynamic'
 
 // TODO: Create Props Type
 const Blog = (props: any) => {
-	const { blogs } = props
+	const { blog } = props
+	const MDX = dynamic(() => import(`../../_blogs/posts/${blog}.mdx`))
 
 	return (
 		<>
-			<Typography>{blogs[0].blog}</Typography>
+			<MDX />
 		</>
 	)
 }
@@ -27,11 +28,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
+	if (!context.params) return { props: {} }
+	const slug = context.params.blog
+
 	return {
 		props: {
-			blogs: getMetaArticles().map((meta) => {
-				return { blog: meta.slug }
-			}),
+			blog: slug,
 		},
 	}
 }

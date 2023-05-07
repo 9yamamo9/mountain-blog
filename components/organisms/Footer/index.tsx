@@ -1,4 +1,4 @@
-import { BottomNavigation, Box, Paper, Typography } from '@mui/material'
+import { Box, Paper, Typography } from '@mui/material'
 import FooterItems from '../../molecules/FooterItems'
 
 const Footer = () => {
