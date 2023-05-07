@@ -1,17 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { getMetaArticles } from '@/lib/blogs/generate'
-import dynamic from 'next/dynamic'
+import { getMetaArticle, getMetaArticles } from '@/lib/blogs/generate'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 
 // TODO: Create Props Type
 const Blog = (props: any) => {
-	const { blog } = props
-	const MDX = dynamic(() => import(`../../_blogs/posts/${blog}.mdx`))
+	const { slug, meta, mdxSource } = props
 
-	return (
-		<>
-			<MDX />
-		</>
-	)
+	return <MDXRemote {...mdxSource} />
 }
 
 export default Blog
@@ -31,9 +27,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	if (!context.params) return { props: {} }
 	const slug = context.params.blog
 
+	const { meta, content } = getMetaArticle(`${slug}.mdx`)
+	const mdxSource = await serialize(content)
+
 	return {
 		props: {
-			blog: slug,
+			slug,
+			meta,
+			mdxSource,
 		},
 	}
 }
