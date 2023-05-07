@@ -9,7 +9,7 @@ import Grid2 from '@mui/material/Unstable_Grid2'
 
 const FooterItems = () => {
 	return (
-		<Grid2 container direction='row' spacing={4}>
+		<Grid2 container direction='row' spacing={2}>
 			<Grid2>
 				<FooterItem
 					iconComponent={<RiProfileLine size={24} />}

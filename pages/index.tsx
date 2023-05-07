@@ -2,6 +2,8 @@ import Head from 'next/head'
 import TopPage from '@/components/templates/TopPage'
 import { GetStaticProps } from 'next'
 import { getMetaArticles } from '@/lib/blogs/generate'
+import SideBar from '@/components/organisms/SideBar'
+import { Container } from '@mui/material'
 
 // TODO: Create Props Type
 const Home = (props: any) => {
@@ -14,7 +16,9 @@ const Home = (props: any) => {
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 				<link rel='icon' href='/mountain-forest-logo.png' />
 			</Head>
-			<TopPage cards={blogMeta} />
+			<Container sx={{ pt: 12 }}>
+				<TopPage cards={blogMeta} />
+			</Container>
 		</>
 	)
 }

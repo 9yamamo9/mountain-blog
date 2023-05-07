@@ -22,9 +22,7 @@ const FooterItem: NextPage<HeaderItem> = (props) => {
 				justifyContent='center'
 				alignItems='center'>
 				{iconComponent}
-				<Typography variant='body1' pl={1}>
-					{name}
-				</Typography>
+				<Typography variant='body1'>{name}</Typography>
 			</Box>
 		</Link>
 	)
