@@ -2,7 +2,6 @@ import Head from 'next/head'
 import TopPage from '@/components/templates/TopPage'
 import { GetStaticProps } from 'next'
 import { getMetaArticles } from '@/lib/blogs/generate'
-import SideBar from '@/components/organisms/SideBar'
 import { Container } from '@mui/material'
 
 // TODO: Create Props Type

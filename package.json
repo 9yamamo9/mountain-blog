@@ -11,6 +11,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@code-hike/mdx": "^0.8.3-next.2",
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
     "@mdx-js/loader": "^2.3.0",
@@ -29,6 +30,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
+    "shiki": "^0.14.2",
     "styled-components": "^5.3.10",
     "typescript": "5.0.4"
   },

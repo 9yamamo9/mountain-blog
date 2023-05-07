@@ -3,14 +3,18 @@ import { getMetaArticle, getMetaArticles } from '@/lib/blogs/generate'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import { Container } from '@mui/material'
+import { remarkCodeHike } from '@code-hike/mdx'
+import { CH } from '@code-hike/mdx/components'
+import theme from 'shiki/themes/monokai.json'
 
+const components = { CH }
 // TODO: Create Props Type
 const Blog = (props: any) => {
 	const { slug, meta, mdxSource } = props
 
 	return (
 		<Container sx={{ pt: 12 }}>
-			<MDXRemote {...mdxSource} />
+			<MDXRemote {...mdxSource} components={components} />
 		</Container>
 	)
 }
@@ -33,7 +37,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	const slug = context.params.blog
 
 	const { meta, content } = getMetaArticle(`${slug}.mdx`)
-	const mdxSource = await serialize(content)
+	const mdxSource = await serialize(content, {
+		mdxOptions: {
+			remarkPlugins: [[remarkCodeHike, { theme, autoImport: false }]],
+			useDynamicImport: true,
+		},
+	})
 
 	return {
 		props: {
