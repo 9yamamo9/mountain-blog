@@ -8,7 +8,11 @@ const ProfileDescribe: NextPage<ProfileDescribeProps> = (props) => {
 	const { name, message } = props
 
 	return (
-		<Box display='flex' flexDirection='column'>
+		<Box
+			display='flex'
+			flexDirection='column'
+			justifyContent='center'
+			alignItems='center'>
 			<Typography variant='h6'>{name}</Typography>
 			<Typography variant='body1'>{message}</Typography>
 		</Box>

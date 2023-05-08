@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
 				<SideBar
 					src='/Profile/yamamori-rice.jpg'
 					alt='MF'
-					name='Mountain Forest'
+					name='Mt. Forest'
 					message="I'm a software engineer."
 				/>
 				<Component {...pageProps} />

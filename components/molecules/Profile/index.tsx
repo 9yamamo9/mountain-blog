@@ -21,8 +21,6 @@ const Profile: NextPage<ProfileProps> = (props) => {
 				alignItems='center'
 				justifyContent='center'>
 				<ProfileAvatar src={src} alt={alt} />
-			</Box>
-			<Box ml={2}>
 				<ProfileDescribe name={name} message={message} />
 			</Box>
 		</Box>

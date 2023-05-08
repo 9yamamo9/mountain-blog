@@ -23,9 +23,7 @@ const SideBar: NextPage<SideBarProps> = (props) => {
 					[`& .MuiDrawer-paper`]: { width: 240, boxSizing: 'border-box' },
 				}}>
 				<Toolbar />
-				<Box sx={{ overflow: 'auto' }}>
-					<Profile src={src} alt={alt} name={name} message={message} />
-				</Box>
+				<Profile src={src} alt={alt} name={name} message={message} />
 			</Drawer>
 			<Drawer
 				variant='permanent'
