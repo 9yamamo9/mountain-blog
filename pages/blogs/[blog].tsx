@@ -6,8 +6,12 @@ import { Container } from '@mui/material'
 import { remarkCodeHike } from '@code-hike/mdx'
 import { CH } from '@code-hike/mdx/components'
 import theme from 'shiki/themes/monokai.json'
+import remarkGfm from 'remark-gfm'
+import remarkEmbedder from '@remark-embedder/core'
+import oembedTransformer from '@remark-embedder/transformer-oembed'
 
 const components = { CH }
+
 // TODO: Create Props Type
 const Blog = (props: any) => {
 	const { slug, meta, mdxSource } = props
@@ -39,7 +43,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	const { meta, content } = getMetaArticle(`${slug}.mdx`)
 	const mdxSource = await serialize(content, {
 		mdxOptions: {
-			remarkPlugins: [[remarkCodeHike, { theme, autoImport: false }]],
+			remarkPlugins: [
+				[remarkCodeHike, { theme, autoImport: false }],
+				[remarkGfm],
+				[remarkEmbedder, { transformers: [oembedTransformer] }],
+			],
 			useDynamicImport: true,
 		},
 	})
