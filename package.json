@@ -11,7 +11,6 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@code-hike/mdx": "^0.8.3-next.2",
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
     "@mdx-js/loader": "^2.3.0",
@@ -19,21 +18,19 @@
     "@mui/material": "^5.12.2",
     "@mui/styled-engine-sc": "^5.12.0",
     "@next/mdx": "^13.3.2",
-    "@remark-embedder/core": "^3.0.1",
-    "@remark-embedder/transformer-oembed": "^3.0.0",
     "@types/node": "18.16.2",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.1",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
     "gray-matter": "^4.0.3",
-    "next": "13.3.1",
+    "next": "13.4.1",
     "next-transpile-modules": "^10.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
+    "react-markdown": "^8.0.7",
     "remark-gfm": "^3.0.1",
-    "shiki": "^0.14.2",
     "styled-components": "^5.3.10",
     "typescript": "5.0.4"
   },
@@ -46,8 +43,10 @@
     "@storybook/react": "^7.0.7",
     "@storybook/testing-library": "^0.0.14-next.2",
     "@types/prettier": "^2.7.2",
+    "@types/react-syntax-highlighter": "^15.5.6",
     "next-mdx-remote": "^4.4.1",
     "prettier": "2.8.8",
+    "react-syntax-highlighter": "^15.5.0",
     "storybook": "^7.0.7",
     "ts-node": "^10.9.1"
   }
