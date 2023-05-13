@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getMetaArticle, getMetaArticles } from '@/lib/blogs/generate'
-import { Container } from '@mui/material'
+import { Box, Container, Typography } from '@mui/material'
 import remarkGfm from 'remark-gfm'
 import ReactMarkdown from 'react-markdown'
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -34,6 +34,9 @@ const Blog = (props: any) => {
 
 	return (
 		<Container sx={{ pt: 12 }}>
+			<Box textAlign='center'>
+				<Typography variant='h2'>{meta.title}</Typography>
+			</Box>
 			<ReactMarkdown remarkPlugins={[[remarkGfm]]} components={components}>
 				{content}
 			</ReactMarkdown>
