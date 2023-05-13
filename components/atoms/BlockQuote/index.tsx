@@ -1,4 +1,4 @@
-import { Box, Container, Paper, Typography } from '@mui/material'
+import { Box, Paper, Typography } from '@mui/material'
 import { TbQuote } from 'react-icons/all'
 import { NextPage } from 'next'
 

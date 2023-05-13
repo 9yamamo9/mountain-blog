@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getMetaArticle, getMetaArticles } from '@/lib/blogs/generate'
-import { Box, Container } from '@mui/material'
+import { Container } from '@mui/material'
 import remarkGfm from 'remark-gfm'
 import ReactMarkdown from 'react-markdown'
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter'
