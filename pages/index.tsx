@@ -4,9 +4,8 @@ import { GetStaticProps } from 'next'
 import { getMetaArticles } from '@/lib/blogs/generate'
 import { Container } from '@mui/material'
 
-// TODO: Create Props Type
 const Home = (props: any) => {
-	const { blogMeta } = props
+	const { blogMetas } = props
 	return (
 		<>
 			<Head>
@@ -16,7 +15,7 @@ const Home = (props: any) => {
 				<link rel='icon' href='/mountain-forest-logo.png' />
 			</Head>
 			<Container sx={{ pt: 12 }}>
-				<TopPage cards={blogMeta} />
+				<TopPage cards={blogMetas} />
 			</Container>
 		</>
 	)
@@ -30,7 +29,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	console.log('tmpData', metas)
 	return {
 		props: {
-			blogMeta: metas,
+			blogMetas: metas,
 		},
 	}
 }

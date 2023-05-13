@@ -6,12 +6,25 @@ import ReactMarkdown from 'react-markdown'
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import BlockQuote from '@/components/atoms/BlockQuote'
+import Image from 'next/image'
 
 // TODO: Create Props Type
 const Blog = (props: any) => {
 	const { slug, meta, content } = props
 
 	const components = {
+		img: (img: any) => {
+			// TODO: Create Image Component for blog image
+			return (
+				<Image
+					src={img.src}
+					alt={img.alt}
+					width='200'
+					height='100'
+					style={{ objectFit: 'contain' }}
+				/>
+			)
+		},
 		blockquote: (blockquote: any) => {
 			return <BlockQuote message={blockquote.children[1].props.children} />
 		},
@@ -36,6 +49,13 @@ const Blog = (props: any) => {
 		<Container sx={{ pt: 12 }}>
 			<Box textAlign='center'>
 				<Typography variant='h2'>{meta.title}</Typography>
+				<Image
+					src={meta.imageSrc}
+					alt={meta.imageAlt}
+					width='800'
+					height='300'
+					style={{ objectFit: 'contain' }}
+				/>
 			</Box>
 			<ReactMarkdown remarkPlugins={[[remarkGfm]]} components={components}>
 				{content}
