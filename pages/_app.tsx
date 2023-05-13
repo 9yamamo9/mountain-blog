@@ -4,7 +4,6 @@ import { theme } from '@/theme/theme'
 import Footer from '@/components/organisms/Footer'
 import Header from '@/components/organisms/Header'
 import SideBar from '@/components/organisms/SideBar'
-import '@code-hike/mdx/dist/index.css'
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
