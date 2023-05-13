@@ -10,18 +10,10 @@ import BlockQuote from '@/components/atoms/BlockQuote'
 // TODO: Create Props Type
 const Blog = (props: any) => {
 	const { slug, meta, content } = props
+
 	const components = {
 		blockquote: (blockquote: any) => {
-			console.log('blockquote', blockquote)
-			return (
-				<Box
-					display='flex'
-					flexDirection='row'
-					justifyContent='center'
-					alignItems='center'>
-					<BlockQuote message={blockquote.children[1].props.children} />
-				</Box>
-			)
+			return <BlockQuote message={blockquote.children[1].props.children} />
 		},
 		pre: (pre: any) => {
 			if (pre.children[0].type !== 'code') {

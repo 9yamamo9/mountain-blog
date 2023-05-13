@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from '@mui/material'
+import { Box, Container, Paper, Typography } from '@mui/material'
 import { TbQuote } from 'react-icons/all'
 import { NextPage } from 'next'
 
@@ -7,12 +7,14 @@ type BlockQuoteProps = {
 }
 const BlockQuote: NextPage<BlockQuoteProps> = ({ message }) => {
 	return (
-		<Container>
-			<Box display='flex' flexDirection='row'>
-				<TbQuote size={36} />
-				<Typography variant='body1'>{message}</Typography>
-			</Box>
-		</Container>
+		<Box display='flex' flexDirection='row' justifyContent='center'>
+			<Paper elevation={1} sx={{ my: 2 }}>
+				<Box display='flex' flexDirection='row' justifyContent='center' p={2}>
+					<TbQuote size={36} />
+					<Typography variant='body1'>{message}</Typography>
+				</Box>
+			</Paper>
+		</Box>
 	)
 }
 
