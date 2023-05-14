@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getMetaArticle, getMetaArticles } from '@/lib/blogs/generate'
-import { Box, Container, Typography } from '@mui/material'
+import { Card, Box, Paper, Toolbar, Typography } from '@mui/material'
 import remarkGfm from 'remark-gfm'
 import ReactMarkdown from 'react-markdown'
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -8,6 +8,9 @@ import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import BlockQuote from '@/components/atoms/BlockQuote'
 import Image from 'next/image'
 import ImageInBlog from '@/components/atoms/ImageInBlog'
+import Grid2 from '@mui/material/Unstable_Grid2'
+import SideBar from '@/components/organisms/SideBar'
+import Head from 'next/head'
 
 // TODO: Create Props Type
 const Blog = (props: any) => {
@@ -38,21 +41,49 @@ const Blog = (props: any) => {
 	}
 
 	return (
-		<Container sx={{ pt: 12 }}>
-			<Box textAlign='center'>
-				<Typography variant='h2'>{meta.title}</Typography>
-				<Image
-					src={meta.imageSrc}
-					alt={meta.imageAlt}
-					width='800'
-					height='300'
-					style={{ objectFit: 'contain' }}
-				/>
-			</Box>
-			<ReactMarkdown remarkPlugins={[[remarkGfm]]} components={components}>
-				{content}
-			</ReactMarkdown>
-		</Container>
+		<Box sx={{ backgroundColor: 'lightgrey' }}>
+			<Head>
+				<title>{"Mountain Forest's blog"}</title>
+				<meta name='description' content="Mountain Forest's blog" />
+				<meta name='viewport' content='width=device-width, initial-scale=1' />
+				<link rel='icon' href='/mountain-forest-logo.png' />
+			</Head>
+			<Toolbar />
+
+			<Grid2
+				container
+				direction='row'
+				spacing={2}
+				sx={{ backgroundColor: 'lightgrey' }}>
+				<Grid2 xs={0} md={2}>
+					<SideBar
+						src='/Profile/yamamori-rice.jpg'
+						alt='MF'
+						name='Mt. Forest'
+						message="I'm a software engineer."
+					/>
+				</Grid2>
+				<Grid2 xs={12} md={10}>
+					<Card sx={{ px: 8, pb: 4, flexGrow: 1 }}>
+						<Box textAlign='center'>
+							<Typography variant='h2'>{meta.title}</Typography>
+							<Image
+								src={meta.imageSrc}
+								alt={meta.imageAlt}
+								width='800'
+								height='300'
+								style={{ objectFit: 'contain' }}
+							/>
+						</Box>
+						<ReactMarkdown
+							remarkPlugins={[[remarkGfm]]}
+							components={components}>
+							{content}
+						</ReactMarkdown>
+					</Card>
+				</Grid2>
+			</Grid2>
+		</Box>
 	)
 }
 

@@ -17,6 +17,7 @@ const Home = (props: any) => {
 				<link rel='icon' href='/mountain-forest-logo.png' />
 			</Head>
 			<Toolbar />
+
 			<Grid2
 				container
 				direction='row'
