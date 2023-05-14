@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getMetaArticle, getMetaArticles } from '@/lib/blogs/generate'
-import { Card, Box, Paper, Toolbar, Typography } from '@mui/material'
+import { Box, Card, Toolbar, Typography } from '@mui/material'
 import remarkGfm from 'remark-gfm'
 import ReactMarkdown from 'react-markdown'
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -54,8 +54,9 @@ const Blog = (props: any) => {
 				container
 				direction='row'
 				spacing={2}
+				justifyContent='center'
 				sx={{ backgroundColor: 'lightgrey' }}>
-				<Grid2 xs={0} md={2}>
+				<Grid2 xs={0} md={2} sx={{ px: 0 }}>
 					<SideBar
 						src='/Profile/yamamori-rice.jpg'
 						alt='MF'
@@ -63,8 +64,8 @@ const Blog = (props: any) => {
 						message="I'm a software engineer."
 					/>
 				</Grid2>
-				<Grid2 xs={12} md={10}>
-					<Card sx={{ px: 8, pb: 4, flexGrow: 1 }}>
+				<Grid2 xs={12} md={8}>
+					<Card sx={{ px: 4, pb: 4, flexGrow: 1 }}>
 						<Box textAlign='center'>
 							<Typography variant='h2'>{meta.title}</Typography>
 							<Image

@@ -22,8 +22,9 @@ const Home = (props: any) => {
 				container
 				direction='row'
 				spacing={2}
+				justifyContent='center'
 				sx={{ backgroundColor: 'lightgrey' }}>
-				<Grid2 xs={0} md={2}>
+				<Grid2 xs={0} md={2} sx={{ px: 0 }}>
 					<SideBar
 						src='/Profile/yamamori-rice.jpg'
 						alt='MF'
@@ -31,7 +32,7 @@ const Home = (props: any) => {
 						message="I'm a software engineer."
 					/>
 				</Grid2>
-				<Grid2 xs={12} md={10}>
+				<Grid2 xs={12} md={8}>
 					<TopPage cards={blogMetas} />
 				</Grid2>
 			</Grid2>

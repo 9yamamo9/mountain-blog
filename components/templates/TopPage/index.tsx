@@ -8,7 +8,7 @@ const TopPage: NextPage<TopPageProps> = (props) => {
 	const { cards } = props
 
 	return (
-		<Card sx={{ p: 4, flexGrow: 1 }}>
+		<Card sx={{ p: 2, flexGrow: 1 }}>
 			<Typography variant='h4' sx={{ mb: 2 }}>
 				Latest Articles
 			</Typography>
