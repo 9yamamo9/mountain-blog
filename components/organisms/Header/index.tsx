@@ -10,7 +10,7 @@ const Header: NextPage<HeaderProps> = (props) => {
 
 	return (
 		<AppBar
-			position='fixed'
+			position='absolute'
 			color={'primary'}
 			sx={{
 				zIndex: (theme) => theme.zIndex.drawer + 1,

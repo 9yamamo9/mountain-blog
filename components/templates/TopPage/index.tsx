@@ -1,4 +1,4 @@
-import { Container, Typography } from '@mui/material'
+import { Card, Typography } from '@mui/material'
 import { NextPage } from 'next'
 import ArticleCards, { ArticleCardsProps } from '../../organisms/ArticleCards'
 
@@ -8,10 +8,12 @@ const TopPage: NextPage<TopPageProps> = (props) => {
 	const { cards } = props
 
 	return (
-		<>
-			<Typography variant='h4'>New Articles</Typography>
+		<Card sx={{ p: 4, flexGrow: 1 }}>
+			<Typography variant='h4' sx={{ mb: 2 }}>
+				Latest Articles
+			</Typography>
 			<ArticleCards cards={cards} />
-		</>
+		</Card>
 	)
 }
 
