@@ -7,6 +7,7 @@ import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import BlockQuote from '@/components/atoms/BlockQuote'
 import Image from 'next/image'
+import ImageInBlog from '@/components/atoms/ImageInBlog'
 
 // TODO: Create Props Type
 const Blog = (props: any) => {
@@ -14,16 +15,7 @@ const Blog = (props: any) => {
 
 	const components = {
 		img: (img: any) => {
-			// TODO: Create Image Component for blog image
-			return (
-				<Image
-					src={img.src}
-					alt={img.alt}
-					width='200'
-					height='100'
-					style={{ objectFit: 'contain' }}
-				/>
-			)
+			return <ImageInBlog src={img.src} alt={img.alt} />
 		},
 		blockquote: (blockquote: any) => {
 			return <BlockQuote message={blockquote.children[1].props.children} />
