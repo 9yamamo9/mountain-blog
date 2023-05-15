@@ -7,7 +7,7 @@ import SideBar from '@/components/organisms/SideBar'
 import Grid2 from '@mui/material/Unstable_Grid2'
 
 const Home = (props: any) => {
-	const { blogMetas } = props
+	const { blogMetas, allTags } = props
 	return (
 		<Box sx={{ backgroundColor: 'lightgrey' }}>
 			<Head>
@@ -30,6 +30,7 @@ const Home = (props: any) => {
 						alt='MF'
 						name='Mt. Forest'
 						message="I'm a software engineer."
+						tags={allTags}
 					/>
 				</Grid2>
 				<Grid2 xs={12} md={8}>
@@ -45,10 +46,17 @@ export default Home
 export const getStaticProps: GetStaticProps = async (context) => {
 	const metas = getMetaArticles()
 
+	const allTags: string[] = []
+	metas.forEach((meta) => {
+		return meta.tags?.forEach((tag) => allTags.push(tag))
+	})
+	const reducedAllTags = Array.from(new Set(allTags)).sort()
+
 	console.log('tmpData', metas)
 	return {
 		props: {
 			blogMetas: metas,
+			allTags: reducedAllTags,
 		},
 	}
 }

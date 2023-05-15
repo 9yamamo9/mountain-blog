@@ -1,6 +1,7 @@
 import path from 'path'
 import { readdirSync, readFileSync } from 'fs'
 import matter from 'gray-matter'
+import { BlogMeta } from '@/types/meta'
 
 const blogsPostsDir = path.join(process.cwd(), '_blogs/posts')
 
@@ -21,8 +22,10 @@ export const getMetaArticle = (filename: string) => {
 export const getMetaArticles = () => {
 	return getArticleFileNames().map((filename) => {
 		const { meta } = getMetaArticle(filename)
+		const typedMeta = meta as BlogMeta
+
 		return {
-			...meta,
+			...typedMeta,
 			slug: filename.split(/\.mdx/)[0],
 		}
 	})

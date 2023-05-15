@@ -16,5 +16,6 @@ export const Primary: Story = {
 		alt: 'Mountain Forest',
 		name: 'Mountain Forest',
 		message: 'Welcome to the blogs.',
+		tags: ['Next.js', 'React', 'AWS', 'Terraform', 'IaC', 'GitHub Actions'],
 	},
 }
