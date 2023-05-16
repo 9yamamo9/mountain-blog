@@ -11,12 +11,28 @@ import ImageInBlog from '@/components/atoms/ImageInBlog'
 import Grid2 from '@mui/material/Unstable_Grid2'
 import SideBar from '@/components/organisms/SideBar'
 import Head from 'next/head'
+import YouTube from 'react-youtube'
 
 // TODO: Create Props Type
 const Blog = (props: any) => {
 	const { slug, meta, content, reducedAllTags } = props
 
 	const components = {
+		a: (a: any) => {
+			console.log('a', a)
+			const href: string = a.href
+			if (href.indexOf('#')) {
+				const url = new URL(href)
+				if (url.origin.includes('youtube.com')) {
+					return (
+						<Box textAlign='center'>
+							<YouTube videoId={url.searchParams.get('v') as string} />
+						</Box>
+					)
+				}
+			}
+			return <a {...a} />
+		},
 		img: (img: any) => {
 			return <ImageInBlog src={img.src} alt={img.alt} />
 		},
