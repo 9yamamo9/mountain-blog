@@ -14,7 +14,7 @@ import Head from 'next/head'
 
 // TODO: Create Props Type
 const Blog = (props: any) => {
-	const { slug, meta, content } = props
+	const { slug, meta, content, reducedAllTags } = props
 
 	const components = {
 		img: (img: any) => {
@@ -62,6 +62,7 @@ const Blog = (props: any) => {
 						alt='MF'
 						name='Mt. Forest'
 						message="I'm a software engineer."
+						tags={reducedAllTags}
 					/>
 				</Grid2>
 				<Grid2 xs={12} md={8}>
@@ -107,11 +108,19 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 	const { meta, content } = getMetaArticle(`${slug}.mdx`)
 
+	const allTags: string[] = []
+	const metas = getMetaArticles()
+	metas.forEach((meta) => {
+		return meta.tags?.forEach((tag) => allTags.push(tag))
+	})
+	const reducedAllTags = Array.from(new Set(allTags)).sort()
+
 	return {
 		props: {
 			slug,
 			meta,
 			content,
+			reducedAllTags,
 		},
 	}
 }
