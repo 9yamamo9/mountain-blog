@@ -12,6 +12,7 @@ import Grid2 from '@mui/material/Unstable_Grid2'
 import SideBar from '@/components/organisms/SideBar'
 import Head from 'next/head'
 import YouTube from 'react-youtube'
+import { TwitterTweetEmbed } from 'react-twitter-embed'
 
 // TODO: Create Props Type
 const Blog = (props: any) => {
@@ -21,12 +22,24 @@ const Blog = (props: any) => {
 		a: (a: any) => {
 			console.log('a', a)
 			const href: string = a.href
+
 			if (href.indexOf('#')) {
 				const url = new URL(href)
+
 				if (url.origin.includes('youtube.com')) {
 					return (
 						<Box textAlign='center'>
 							<YouTube videoId={url.searchParams.get('v') as string} />
+						</Box>
+					)
+				}
+
+				if (url.origin.indexOf('twitter.com')) {
+					const pathNames = url.pathname.split('/')
+					console.log(pathNames)
+					return (
+						<Box textAlign='center'>
+							<TwitterTweetEmbed tweetId={pathNames[3]} />
 						</Box>
 					)
 				}
