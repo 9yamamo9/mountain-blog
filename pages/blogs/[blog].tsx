@@ -20,7 +20,6 @@ const Blog = (props: any) => {
 
 	const components = {
 		a: (a: any) => {
-			console.log('a', a)
 			const href: string = a.href
 
 			if (href.indexOf('#')) {
@@ -36,7 +35,6 @@ const Blog = (props: any) => {
 
 				if (url.origin.indexOf('twitter.com')) {
 					const pathNames = url.pathname.split('/')
-					console.log(pathNames)
 					return (
 						<TweetEmbed
 							key={pathNames[3]}

@@ -52,7 +52,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	})
 	const reducedAllTags = Array.from(new Set(allTags)).sort()
 
-	console.log('tmpData', metas)
 	return {
 		props: {
 			blogMetas: metas,
