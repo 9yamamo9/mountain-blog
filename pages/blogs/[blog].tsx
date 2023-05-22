@@ -12,7 +12,7 @@ import Grid2 from '@mui/material/Unstable_Grid2'
 import SideBar from '@/components/organisms/SideBar'
 import Head from 'next/head'
 import YouTube from 'react-youtube'
-import { TwitterTweetEmbed } from 'react-twitter-embed'
+import TweetEmbed from 'react-tweet-embed'
 
 // TODO: Create Props Type
 const Blog = (props: any) => {
@@ -38,9 +38,11 @@ const Blog = (props: any) => {
 					const pathNames = url.pathname.split('/')
 					console.log(pathNames)
 					return (
-						<Box textAlign='center'>
-							<TwitterTweetEmbed tweetId={pathNames[3]} />
-						</Box>
+						<TweetEmbed
+							key={pathNames[3]}
+							tweetId={pathNames[3]}
+							options={{ align: 'center' }}
+						/>
 					)
 				}
 			}
