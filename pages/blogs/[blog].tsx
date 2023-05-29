@@ -16,37 +16,14 @@ import TweetEmbed from 'react-tweet-embed'
 import { getFloatingUrls } from '@/lib/ogp/getFloatingUrls'
 import { getOpgData } from '@/lib/ogp/getOgpData'
 import LinkCard from '@/components/atoms/LinkCard'
-import { isValidElement } from 'react'
 
 // TODO: Create Props Type
 const Blog = (props: any) => {
 	const { slug, meta, content, opgDataList, reducedAllTags } = props
 
 	const components = {
-		// p: (p: any) => {
-		// 	const children = p.children
-		// 	const childrenProps: any = children[0].props
-		// 	if (
-		// 		Array.isArray(children) &&
-		// 		children[0] &&
-		// 		isValidElement(children[0]) &&
-		// 		childrenProps.node?.tagName === 'a'
-		// 	) {
-		// 		console.log('innerChildren', children)
-		// 		return <a href={childrenProps.href}>hoge</a>
-		// 	} else {
-		// 		return <p>{children}</p>
-		// 	}
-		// },
 		a: (a: any) => {
 			const href: string = a.href
-
-			opgDataList.forEach((data: any) => {
-				if (data.requestUrl === href) {
-					console.log('a', a)
-					console.log('hogehoge', href)
-				}
-			})
 
 			if (href.indexOf('#')) {
 				const url = new URL(href)
@@ -57,9 +34,7 @@ const Blog = (props: any) => {
 							<YouTube videoId={url.searchParams.get('v') as string} />
 						</Box>
 					)
-				}
-
-				if (url.origin.indexOf('twitter.com')) {
+				} else if (url.origin.includes('twitter.com')) {
 					const pathNames = url.pathname.split('/')
 					return (
 						<TweetEmbed
@@ -68,6 +43,8 @@ const Blog = (props: any) => {
 							options={{ align: 'center' }}
 						/>
 					)
+				} else {
+					return <LinkCard href={href} text='hoge' opgData={opgDataList} />
 				}
 			}
 

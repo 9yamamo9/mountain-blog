@@ -13,7 +13,7 @@ const LinkCard: NextPage<LinkCardProps> = ({ href, text, title, opgData }) => {
 		<>
 			{
 				<a href={href} target='_blank' rel='noreferrer'>
-					${text}
+					{text}
 				</a>
 			}
 		</>
