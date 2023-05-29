@@ -4,7 +4,7 @@ import {
 } from 'open-graph-scraper/dist/lib/types'
 import setOptionsAndReturnOpenGraphResults from 'open-graph-scraper/dist/lib/openGraphScraper'
 
-const getOpgData = async (
+export const getOpgData = async (
 	floatingUrls: string[]
 ): Promise<OgObjectInteral[]> => {
 	const ogpDataList: OgObjectInteral[] = []

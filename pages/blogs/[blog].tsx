@@ -13,14 +13,40 @@ import SideBar from '@/components/organisms/SideBar'
 import Head from 'next/head'
 import YouTube from 'react-youtube'
 import TweetEmbed from 'react-tweet-embed'
+import { getFloatingUrls } from '@/lib/ogp/getFloatingUrls'
+import { getOpgData } from '@/lib/ogp/getOgpData'
+import LinkCard from '@/components/atoms/LinkCard'
+import { isValidElement } from 'react'
 
 // TODO: Create Props Type
 const Blog = (props: any) => {
-	const { slug, meta, content, reducedAllTags } = props
+	const { slug, meta, content, opgDataList, reducedAllTags } = props
 
 	const components = {
+		// p: (p: any) => {
+		// 	const children = p.children
+		// 	const childrenProps: any = children[0].props
+		// 	if (
+		// 		Array.isArray(children) &&
+		// 		children[0] &&
+		// 		isValidElement(children[0]) &&
+		// 		childrenProps.node?.tagName === 'a'
+		// 	) {
+		// 		console.log('innerChildren', children)
+		// 		return <a href={childrenProps.href}>hoge</a>
+		// 	} else {
+		// 		return <p>{children}</p>
+		// 	}
+		// },
 		a: (a: any) => {
 			const href: string = a.href
+
+			opgDataList.forEach((data: any) => {
+				if (data.requestUrl === href) {
+					console.log('a', a)
+					console.log('hogehoge', href)
+				}
+			})
 
 			if (href.indexOf('#')) {
 				const url = new URL(href)
@@ -44,6 +70,7 @@ const Blog = (props: any) => {
 					)
 				}
 			}
+
 			return <a {...a} />
 		},
 		img: (img: any) => {
@@ -106,9 +133,7 @@ const Blog = (props: any) => {
 								style={{ objectFit: 'contain' }}
 							/>
 						</Box>
-						<ReactMarkdown
-							remarkPlugins={[[remarkGfm]]}
-							components={components}>
+						<ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
 							{content}
 						</ReactMarkdown>
 					</Card>
@@ -144,11 +169,17 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	})
 	const reducedAllTags = Array.from(new Set(allTags)).sort()
 
+	const floatingUrls = getFloatingUrls(content)
+	const opgDataList = await getOpgData(floatingUrls)
+
+	console.log('opgDataList', opgDataList)
+
 	return {
 		props: {
 			slug,
 			meta,
 			content,
+			opgDataList,
 			reducedAllTags,
 		},
 	}
