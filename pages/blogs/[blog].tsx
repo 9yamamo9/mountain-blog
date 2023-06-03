@@ -44,7 +44,11 @@ const Blog = (props: any) => {
 						/>
 					)
 				} else {
-					return <LinkCard href={href} text='hoge' opgData={opgDataList} />
+					return (
+						<Box width='65%'>
+							<LinkCard href={href} text='hoge' ogpDataList={opgDataList} />
+						</Box>
+					)
 				}
 			}
 

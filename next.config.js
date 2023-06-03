@@ -13,6 +13,9 @@ const withTM = require('next-transpile-modules')(['react-icons'])
 const nextConfig = {
 	pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 	reactStrictMode: true,
+	images: {
+		remotePatterns: [{ protocol: 'https', hostname: '**' }],
+	},
 }
 
 module.exports = withTM(withMDX(nextConfig))
