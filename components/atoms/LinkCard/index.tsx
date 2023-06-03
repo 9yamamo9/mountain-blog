@@ -19,25 +19,29 @@ const LinkCard: NextPage<LinkCardProps> = ({ href, text, ogpDataList }) => {
 
 	const { ogImage } = ogpData
 	const image = Array.isArray(ogImage) ? ogImage[0] : ogImage
-	const title = ogpData.ogTitle
+	const title = ogpData.ogTitle || 'title'
 	const describe = ogpData.ogDescription
 
 	return (
-		<a href={href} target='_blank' rel='noreferrer'>
+		<a
+			href={href}
+			target='_blank'
+			rel='noreferrer'
+			style={{ textDecoration: 'none' }}>
 			<Card>
 				<Box display='flex' flexDirection='row' alignItems='center'>
 					{image && (
 						<Image
 							src={image.url}
-							alt={'hoge'}
+							alt={title}
 							width={160}
 							height={90}
-							style={{ objectFit: 'contain' }}
+							style={{ objectFit: 'cover' }}
 						/>
 					)}
 					<Divider orientation='vertical' sx={{ color: 'black' }} />
 					<Box>
-						<Typography>{title}</Typography>
+						<Typography variant='body1'>{title}</Typography>
 						<Typography variant='body2'>{describe}</Typography>
 					</Box>
 				</Box>
