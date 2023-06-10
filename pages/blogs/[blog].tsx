@@ -45,7 +45,7 @@ const Blog = (props: any) => {
 					)
 				} else {
 					return (
-						<Box width='65%'>
+						<Box width='100%'>
 							<LinkCard href={href} text='hoge' ogpDataList={opgDataList} />
 						</Box>
 					)
