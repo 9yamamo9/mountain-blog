@@ -14,6 +14,7 @@ const FooterItems = () => {
 				<FooterItem
 					iconComponent={<RiProfileLine size={24} />}
 					name='Profile'
+					url='/profile'
 				/>
 			</Grid2>
 
