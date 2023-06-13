@@ -19,7 +19,8 @@ import LinkCard from '@/components/atoms/LinkCard'
 
 // TODO: Create Props Type
 const Blog = (props: any) => {
-	const { slug, meta, content, opgDataList, reducedAllTags } = props
+	const { slug, meta, content, opgDataList, urlsInContent, reducedAllTags } =
+		props
 
 	const components = {
 		a: (a: any) => {
@@ -45,9 +46,11 @@ const Blog = (props: any) => {
 					)
 				} else {
 					return (
-						<Box width='100%'>
-							<LinkCard href={href} text='hoge' ogpDataList={opgDataList} />
-						</Box>
+						<LinkCard
+							href={href}
+							ogpDataList={opgDataList}
+							urls={urlsInContent}
+						/>
 					)
 				}
 			}
@@ -150,8 +153,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	})
 	const reducedAllTags = Array.from(new Set(allTags)).sort()
 
-	const floatingUrls = getFloatingUrls(content)
-	const opgDataList = await getOpgData(floatingUrls)
+	const urlsInContent = getFloatingUrls(content)
+	const opgDataList = await getOpgData(urlsInContent.FloatUrls)
 
 	console.log('opgDataList', opgDataList)
 
@@ -161,6 +164,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 			meta,
 			content,
 			opgDataList,
+			urlsInContent,
 			reducedAllTags,
 		},
 	}

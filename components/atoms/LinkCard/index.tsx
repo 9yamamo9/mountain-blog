@@ -2,20 +2,33 @@ import { OgObjectInteral } from 'open-graph-scraper/dist/lib/types'
 import { NextPage } from 'next'
 import { Box, Card, Divider, Typography } from '@mui/material'
 import Image from 'next/image'
+import Link from 'next/link'
 
 type LinkCardProps = {
 	href?: string
-	text?: string
 	title?: string
 	ogpDataList: OgObjectInteral[]
+	urls: any
 }
 
-const LinkCard: NextPage<LinkCardProps> = ({ href, text, ogpDataList }) => {
+const LinkCard: NextPage<LinkCardProps> = ({ href, ogpDataList, urls }) => {
 	const filteredOgpDataList = ogpDataList.filter(
 		(data) => href === data.requestUrl
 	)
 	const ogpData = filteredOgpDataList[0]
 	console.log(ogpData)
+
+	if (!ogpData) {
+		const title = urls.UrlAndTitleMap.filter(
+			(urlAndTitle: any) => href === urlAndTitle.Url
+		)[0].Title
+
+		return (
+			<Link href={href!} style={{ textDecoration: 'none' }}>
+				{title}
+			</Link>
+		)
+	}
 
 	const { ogImage } = ogpData
 	const image = Array.isArray(ogImage) ? ogImage[0] : ogImage
