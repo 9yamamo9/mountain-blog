@@ -1,6 +1,6 @@
 import FooterItem from '../../components/atoms/FooterItem'
 import { Meta, StoryObj } from '@storybook/react'
-import { FaTwitter } from 'react-icons/all'
+import { FaXTwitter } from 'react-icons/fa6'
 
 const meta: Meta<typeof FooterItem> = {
 	title: 'atoms/FooterItem',
@@ -13,7 +13,7 @@ type Story = StoryObj<typeof FooterItem>
 
 export const Primary: Story = {
 	args: {
-		iconComponent: <FaTwitter size={36} />,
+		iconComponent: <FaXTwitter size={36} />,
 		name: 'Twitter',
 	},
 }
