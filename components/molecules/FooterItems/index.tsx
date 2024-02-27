@@ -1,15 +1,12 @@
 import FooterItem from '../../atoms/FooterItem'
-import {
-	AiFillGithub,
-	FaLinkedin,
-	FaTwitter,
-	RiProfileLine,
-} from 'react-icons/all'
+import { FaGithub } from 'react-icons/fa'
 import Grid2 from '@mui/material/Unstable_Grid2'
+import { FaLinkedin, FaXTwitter } from 'react-icons/fa6'
+import { RiProfileLine } from 'react-icons/ri'
 
 const FooterItems = () => {
 	return (
-		<Grid2 container direction='row' spacing={2}>
+		<Grid2 container textAlign='center' spacing={2}>
 			<Grid2>
 				<FooterItem
 					iconComponent={<RiProfileLine size={24} />}
@@ -20,7 +17,7 @@ const FooterItems = () => {
 
 			<Grid2>
 				<FooterItem
-					iconComponent={<AiFillGithub size={24} />}
+					iconComponent={<FaGithub size={24} />}
 					name='GitHub'
 					url='https://github.com/9yamamo9'
 				/>
@@ -28,9 +25,9 @@ const FooterItems = () => {
 
 			<Grid2>
 				<FooterItem
-					iconComponent={<FaTwitter size={24} />}
-					name='Twitter'
-					url='https://twitter.com/9yamamo9'
+					iconComponent={<FaXTwitter size={24} />}
+					name='X'
+					url='https://x.com/9yamamo9'
 				/>
 			</Grid2>
 
